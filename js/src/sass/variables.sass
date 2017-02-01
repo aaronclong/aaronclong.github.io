@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald)
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i)
 
 $blue: #72d0eb // Update blue
 $pink: #ffb3b3 // Add pink
@@ -6,5 +8,24 @@ $family-serif: "Georgia", serif // Add a serif family
 // Override generated variables here
 // For example, by default, the $danger color is $red and the font is sans-serif
 // You can change these values:
+$google-oswald: 'Oswald', sans-serif
+$google-loral: 'Lora', serif
+$family-primary: $google-oswald // Use the new serif family
 
-$family-primary: $family-serif // Use the new serif family
+//Media Queries
+$phone-width: 300px
+$tablet-width: 768px
+$desktop-width: 1024px
+
+@mixin tablet
+  @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px})
+    @content
+
+@mixin tablet
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px})
+    @content
+
+
+@mixin desktop 
+  @media (min-width: #{$desktop-width}) 
+    @content
