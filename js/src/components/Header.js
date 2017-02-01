@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-import "../sass/Header.sass";
+import '../sass/Header.sass';
+import ln from '../img/linkedin.svg';
 
 /** Convert list into their html form */
 const make_list = props => {
@@ -15,7 +16,9 @@ const make_list = props => {
 const nav = props => {
     return ( 
         <div className="nav">
-          <div className="profile-pic"> </div>
+          <div className="profile-pic"> 
+            <img src={ ln } alt="Aaron's LinkedIn" />
+          </div>
           <ul>
             { props.list }
           </ul>
@@ -23,13 +26,16 @@ const nav = props => {
     );
 }
 
+
+//Main Stateful component for header 
 @observer
 class Header extends Component {
     render() {
-      let list = this.props.store.getLinks(make_list);
+      let list = this.props.store.getLinks(make_list),
+          linkedIn = this.props.store.linkedIn;
       return (
           <header>
-            { nav({ list }) }
+            { nav({ list, linkedIn }) }
           </header>
       );
     }

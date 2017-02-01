@@ -4,6 +4,14 @@ import { action, observable, computed, toJS} from 'mobx';
 
 class HeaderDataStore {
 
+    /** Member variable to expose linkedIn */
+    @observable linkedIn = false;
+    
+    /** Toggle linkedIn visibility */
+    @action toggleLinkedIn() { 
+        this.linkedIn = (this.linkedIn) ? false : true;
+    }
+
     /**
      * Array contains Javascript Object Literatals
      *  containing
@@ -16,6 +24,11 @@ class HeaderDataStore {
           id: 0,
           name: "About Me",
           active: true
+        },
+        {
+            id: 1,
+            name: "Places I love",
+            active: false
         }
     ];
     
