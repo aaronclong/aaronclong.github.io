@@ -16,8 +16,11 @@ const make_list = props => {
 const nav = props => {
     return ( 
         <div className="nav">
-          <div className="profile-pic"> 
-            <img src={ ln } alt="Aaron's LinkedIn" />
+          <div>
+            <div className="profile">
+             <div className="profile-pic"></div>
+             <img src={ ln } alt="Aaron's LinkedIn" />
+            </div>
           </div>
           <ul>
             { props.list }

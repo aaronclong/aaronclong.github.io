@@ -18,12 +18,15 @@
 
 //Desktop
 @include desktop
-  .profile-pic
+  .profile
     height: 25vh
     width: 12vw
-    background-image: url(https://avatars1.githubusercontent.com/u/7354981?v=3&u=ec4c7765eb1ee62760f738b06ac338b7c51d79cd&s=200)
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%)
     clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%)
+  .profile-pic
+    width: 100%
+    height: 100%
+    background-image: url(https://avatars1.githubusercontent.com/u/7354981?v=3&u=ec4c7765eb1ee62760f738b06ac338b7c51d79cd&s=200)
     &:hover
       -webkit-filter: blur(2px)
       filter: blur(2px)

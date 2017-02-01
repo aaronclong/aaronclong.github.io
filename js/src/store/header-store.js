@@ -1,5 +1,3 @@
-'use strict';
-
 import { action, observable, computed, toJS} from 'mobx';
 
 class HeaderDataStore {
