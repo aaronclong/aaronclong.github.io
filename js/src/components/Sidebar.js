@@ -34,8 +34,8 @@ const nav = props => {
 @observer
 class Sidebar extends Component {
     render() {
-      let list = this.props.store.getLinks(make_list),
-          linkedIn = this.props.store.linkedIn;
+      console.log(this.props.store)
+      let list = this.props.store.getLinks(make_list);
       return (
            <Flexbox element="aside" margin="4vh" minHeight="100vh">
             { nav({ list }) }

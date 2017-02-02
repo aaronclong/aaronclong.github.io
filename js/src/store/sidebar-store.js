@@ -1,6 +1,7 @@
 import { action, observable, computed, toJS} from 'mobx';
 
-class HeaderDataStore {
+class SideBarDataStore {
+
     /**
      * Array contains Javascript Object Literatals
      *  containing
@@ -38,8 +39,8 @@ class HeaderDataStore {
     }
 }
 
-const headerStore = new HeaderDataStore();
+export default SideBarDataStore;
 
 
 //Data Store Singelton 
-export default headerStore;
+//export default sideBarStore;
