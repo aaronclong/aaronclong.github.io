@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import HeaderStore from '../store/header-store'
+import Header from './Sidebar';
+import HeaderStore from '../store/sidebar-store'
 import '../sass/App.sass';
 
 class App extends Component {

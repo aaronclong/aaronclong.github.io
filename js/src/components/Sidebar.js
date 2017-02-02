@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-import '../sass/Header.sass';
+import '../sass/Sidebar.sass';
 import ln from '../img/linkedin.svg';
 
 /** Convert list into their html form */
@@ -12,14 +12,22 @@ const make_list = props => {
   );
 }
 
+const linked = bool => {
+  let cmp = null;  
+  if(bool == true) {
+    cmp = <div className="linkedin"><img src={ ln } height="50px" /></div>
+  }
+  return cmp;
+}
+
 /* Navigation stateless function */
 const nav = props => {
     return ( 
         <div className="nav">
           <div>
             <div className="profile">
-             <div className="profile-pic"></div>
-             <img src={ ln } alt="Aaron's LinkedIn" />
+              { linked(props.linkedIn) }
+             <div className="profile-pic" onMouseOver={ props.callback } ></div>
             </div>
           </div>
           <ul>
@@ -32,16 +40,17 @@ const nav = props => {
 
 //Main Stateful component for header 
 @observer
-class Header extends Component {
+class Sidebar extends Component {
     render() {
       let list = this.props.store.getLinks(make_list),
-          linkedIn = this.props.store.linkedIn;
+          linkedIn = this.props.store.linkedIn,
+          callback = this.props.store.toggleLinkedIn.bind(this);
       return (
-          <header>
-            { nav({ list, linkedIn }) }
-          </header>
+          <aside>
+            { nav({ list, linkedIn, callback }) }
+          </aside>
       );
     }
 }
 
-export default Header;
+export default Sidebar;
