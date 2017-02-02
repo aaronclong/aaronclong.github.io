@@ -1,7 +1,8 @@
+import Flexbox from 'flexbox-react';
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import '../sass/Sidebar.sass';
-import ln from '../img/linkedin.svg';
+
 
 /** Convert list into their html form */
 const make_list = props => {
@@ -12,22 +13,13 @@ const make_list = props => {
   );
 }
 
-const linked = bool => {
-  let cmp = null;  
-  if(bool == true) {
-    cmp = <div className="linkedin"><img src={ ln } height="50px" /></div>
-  }
-  return cmp;
-}
-
 /* Navigation stateless function */
 const nav = props => {
     return ( 
         <div className="nav">
           <div>
             <div className="profile">
-              <div className="linkedin"></div>
-             <div className="profile-pic" onMouseOver={ props.callback } ></div>
+             <div className="profile-pic" ></div>
             </div>
           </div>
           <ul>
@@ -43,12 +35,11 @@ const nav = props => {
 class Sidebar extends Component {
     render() {
       let list = this.props.store.getLinks(make_list),
-          linkedIn = this.props.store.linkedIn,
-          callback = this.props.store.toggleLinkedIn.bind(this);
+          linkedIn = this.props.store.linkedIn;
       return (
-          <div className="aside">
-            { nav({ list, linkedIn, callback }) }
-          </div>
+           <Flexbox element="aside" margin="4vh" minHeight="100vh">
+            { nav({ list }) }
+          </Flexbox>
       );
     }
 }

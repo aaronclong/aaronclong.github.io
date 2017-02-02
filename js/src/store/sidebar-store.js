@@ -1,15 +1,6 @@
 import { action, observable, computed, toJS} from 'mobx';
 
 class HeaderDataStore {
-
-    /** Member variable to expose linkedIn */
-    @observable linkedIn = false;
-    
-    /** Toggle linkedIn visibility */
-    @action toggleLinkedIn() { 
-        this.linkedIn = (this.linkedIn) ? false : true;
-    }
-
     /**
      * Array contains Javascript Object Literatals
      *  containing
