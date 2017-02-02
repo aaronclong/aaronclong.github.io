@@ -26,7 +26,7 @@ const nav = props => {
         <div className="nav">
           <div>
             <div className="profile">
-              { linked(props.linkedIn) }
+              <div className="linkedin"></div>
              <div className="profile-pic" onMouseOver={ props.callback } ></div>
             </div>
           </div>
@@ -46,9 +46,9 @@ class Sidebar extends Component {
           linkedIn = this.props.store.linkedIn,
           callback = this.props.store.toggleLinkedIn.bind(this);
       return (
-          <aside>
+          <div className="aside">
             { nav({ list, linkedIn, callback }) }
-          </aside>
+          </div>
       );
     }
 }

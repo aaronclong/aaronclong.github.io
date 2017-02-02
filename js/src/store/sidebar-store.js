@@ -38,7 +38,7 @@ class HeaderDataStore {
     @action setActive(id) {
       this.navLinks.forEach(e => {
           if (id >= this.navLinks.length) return;
-          if(e.id == id) {
+          if(e.id === id) {
               e.active = true;
               return;
           }
