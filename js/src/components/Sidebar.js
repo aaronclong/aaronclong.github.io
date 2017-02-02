@@ -1,13 +1,19 @@
 import Flexbox from 'flexbox-react';
-import React, { Component } from 'react';
 import { observer } from 'mobx-react';
+import React, { Component } from 'react';
+import Store from '../store/Singleton'
 import '../sass/Sidebar.sass';
 
+/** Callback to Change content */
+const selected = i => {
+  const setter = () => { Store.BodyDataStore.setCurrent(i); }
+  return setter;
+}
 
 /** Convert list into their html form */
 const make_list = props => {
   return(
-    <li key={ props.id } >
+    <li key={ props.id } onClick={ selected(props.id) } >
        { props.name }
     </li>
   );
@@ -34,7 +40,6 @@ const nav = props => {
 @observer
 class Sidebar extends Component {
     render() {
-      console.log(this.props.store)
       let list = this.props.store.getLinks(make_list);
       return (
            <Flexbox element="aside" margin="4vh" minHeight="100vh">
