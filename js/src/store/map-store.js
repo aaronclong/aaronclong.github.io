@@ -44,7 +44,7 @@ class MapDataStore {
     places = getPoints();
     
     @computed get getVisible() { 
-        return this.visible; 
+        return toJS(this.visible); 
     }
 
     @action turnVisible() {
@@ -58,7 +58,7 @@ class MapDataStore {
         return this.places[this.currentPlace]['geometry']['coordinates'];
     }
 
-    @action set setCurrentPlace(i) {
+    @action setCurrentPlace(i) {
         if (i >= this.places.length) return;
         this.currentPlace = i;
     }

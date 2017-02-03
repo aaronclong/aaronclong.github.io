@@ -16,6 +16,7 @@ const updateStyle = bool => {
 @observer
 class PlaceMap extends Component {
     render() {
+       console.log(this)
        console.log(this.props.store)
        let bool = this.props.store.getCurrentPlace;
        console.log(bool)
