@@ -13,11 +13,16 @@ class BodyDataStore {
         " I believe strongly in GIS technology, and underutilized capabilties of GIS to fix modern problems." +
         " If you have any quesions, drop me a line.",
         //Two
-        " I'm a city person, and I've always admired urban spaces. Here is just a collection of my favorite spots in cities. "
+        " I'm a city person, and I've always admired urban spaces. Here is just a collection of my favorite spots in cities."
     ];
+
 
     @computed get getCurrent() {
         return this.content[this.current];
+    }
+
+    @computed get index() {
+        return this.current;
     }
 
     @action setCurrent(int) {
