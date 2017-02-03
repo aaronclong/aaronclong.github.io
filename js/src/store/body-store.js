@@ -1,4 +1,4 @@
-import { action, observable, computed, toJS} from 'mobx';
+import { action, observable, computed, toJS } from 'mobx';
 
 class BodyDataStore {
     //content to be oranize by order of the links

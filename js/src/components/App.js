@@ -8,15 +8,13 @@ import '../sass/App.sass';
 
 class App extends Component {
   render() {
-    const { SideBarDataStore, BodyDataStore } = Store;
+    const { BodyDataStore, SideBarDataStore, MapDataStore } = Store;
     return (
       <div className="App">
         <Flexbox flexDirection="row" minHeight="100%">
           < Sidebar store={ SideBarDataStore } />
           < Body store={ BodyDataStore } />
-          <div className="leaflet-container">
-            <PlaceMap />
-          </div>
+          <PlaceMap store={ MapDataStore } />
         </Flexbox>
       </div>
     );
