@@ -1,40 +1,57 @@
-import Flexbox from 'flexbox-react';
+import { observer } from 'mobx-react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import React, { Component } from 'react';
-import { observer } from 'mobx-react';
+import Store from '../store/Singleton';
 import '../sass/Body.sass'
 
 const tile = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
 
-const updateStyle = bool => { 
-    let val = bool === true ? 'block' : 'none';
-    return( { style: { display: val } } );
- }
+const empty_map = () => {
+    return(<div className="the-map"><h1>What's up</h1></div>)
+
+}
 
 
-@observer
-class PlaceMap extends Component {
-    render() {
-       console.log(this)
-       console.log(this.props.store)
-       let bool = this.props.store.getCurrentPlace;
-       console.log(bool)
-       let stylez = updateStyle(bool);
-       return(
-             <div className="leaflet-container" style={ stylez } >
+const map = center => {
+    return(
+            <div className="leaflet-container" >
                 <Map
-                    center={[39.952583, -75.165222]}
+                    center={ center }
                     zoom={13}
                 >
+                  { empty_map() }
                         <TileLayer
                             attribution={attrib}
                             url={tile}
                         />
                         
                 </Map>
-              </div> 
-              );
+            </div> 
+          );
+}
+
+@observer
+class PlaceMap extends Component {
+    constructor() {
+        super();
+        this.state = { visible: false }
+    }
+
+    componentDidMount() {
+        this.setState({ visible: this.props.store.getVisible });
+    }
+
+    render() {
+       const center = this.props.store.getCurrentPlace;
+       let showMap = map(center);
+       if (this.state.visible === true) showMap= map(center); 
+             console.log("Render, Render" + showMap)
+       return (
+           <div className="the-map">
+               { showMap }
+           </div>
+       );
     }
 }
 

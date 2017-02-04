@@ -8,13 +8,12 @@ import '../sass/App.sass';
 
 class App extends Component {
   render() {
-    const { BodyDataStore, SideBarDataStore, MapDataStore } = Store;
+    const { BodyDataStore, SideBarDataStore } = Store;
     return (
       <div className="App">
         <Flexbox flexDirection="row" minHeight="100%">
           < Sidebar store={ SideBarDataStore } />
           < Body store={ BodyDataStore } />
-          <PlaceMap store={ MapDataStore } />
         </Flexbox>
       </div>
     );

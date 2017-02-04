@@ -1,4 +1,4 @@
-import { action, observable, computed, toJS } from 'mobx';
+import { action, observable, computed } from 'mobx';
 
 class BodyDataStore {
     //content to be oranize by order of the links
@@ -23,6 +23,7 @@ class BodyDataStore {
 
     @computed get index() {
         return this.current;
+        console.log("Yep")
     }
 
     @action setCurrent(int) {

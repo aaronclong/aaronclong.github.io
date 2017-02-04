@@ -44,11 +44,13 @@ class MapDataStore {
     places = getPoints();
     
     @computed get getVisible() { 
-        return toJS(this.visible); 
+        return this.visible; 
     }
 
     @action turnVisible() {
-        this.visible = this.visible===true ? false : true;
+        window.console.log(this.visible);
+        this.visible = this.visible ? false : true;
+        window.console.log(this.visible);
     }
 
     /** Managed Places */
