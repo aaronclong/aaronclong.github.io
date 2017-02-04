@@ -1,0 +1,4 @@
+js/build/
+js/node_modules/
+js/jsconfig.json
+.vscode/

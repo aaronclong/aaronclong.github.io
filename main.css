@@ -1,0 +1,185 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i);
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,800");
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i);
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,800");
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i);
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,800");
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i);
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,800");
+section {
+  background-color: #f1f1f1;
+  animation-name: content-sidein;
+  animation-duration: .5s;
+  animation-timing-function: ease-in; }
+
+.top-bar {
+  width: 100%;
+  height: 3vh;
+  background-color: #000033;
+  color: grey;
+  vertical-align: bottom; }
+
+.content {
+  padding: 15px;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 2vh; }
+
+@keyframes content-sidein {
+  0% {
+    transform: translateY(100%);
+    opacity: 0.25; }
+  50% {
+    opacity: 0.5; }
+  75% {
+    opacity: 0.75; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+
+body {
+  background-color: #66ccff;
+  font-family: "Lora", serif; }
+
+p {
+  font-size: 4vmin; }
+
+.aside {
+  width: 25vw;
+  height: 100vh;
+  flex: 1;
+  border: 1px; }
+
+.nav {
+  position: relative;
+  font-family: "Oswald", sans-serif;
+  width: 25vh;
+  margin-bottom: 6vh; }
+  .nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .nav li {
+    text-align: center;
+    font-size: 3vh; }
+
+@media (min-width: 1024px) {
+  .profile {
+    height: 25vh;
+    width: 12vw;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%); }
+  .profile-pic {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://avatars1.githubusercontent.com/u/7354981?v=3&u=ec4c7765eb1ee62760f738b06ac338b7c51d79cd&s=200); }
+    .profile-pic:hover {
+      -webkit-filter: blur(2px);
+      filter: blur(2px); }
+  .nav li {
+    height: 6vh;
+    width: 15vh;
+    margin: 1vh;
+    background-color: #f1f1f1;
+    -webkit-filter: drop-shadow(6px 0 2px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(6px 0 2px rgba(0, 0, 0, 0.2));
+    padding: 12px 16px;
+    z-index: 1;
+    animation-name: li-down;
+    animation-duration: .75s;
+    animation-timing-function: ease; }
+    .nav li:nth-child(odd) {
+      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 75%, 25% 100%, 25% 75%, 0% 75%);
+        -webkit-clip-path-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 75%, 25% 100%, 25% 75%, 0% 75%);
+        -webkit-clip-path-float: left; }
+    .nav li:nth-child(even) {
+      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+      float: right; }
+    .nav li:hover {
+      z-index: 3;
+      height: 8vh;
+      width: 18vh;
+      background-color: #f9f9f9; } }
+
+@keyframes li-down {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0.25; }
+  50% {
+    opacity: 0.5; }
+  75% {
+    opacity: 0.75; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+
+.card-header {
+  align-items: stretch;
+  box-shadow: 0 1px 2px rgba(10, 10, 10, 0.1);
+  display: flex; }
+
+.card-header-title {
+  align-items: center;
+  color: #363636;
+  display: flex;
+  flex-grow: 1;
+  font-weight: 700;
+  padding: 0.75rem; }
+
+.card-header-icon {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem; }
+
+.card-image {
+  display: block;
+  position: relative; }
+
+.card-content {
+  padding: 1.5rem; }
+  .card-content .title + .subtitle {
+    margin-top: -1.5rem; }
+
+.card-footer {
+  border-top: 1px solid #dbdbdb;
+  align-items: stretch;
+  display: flex; }
+
+.card-footer-item {
+  align-items: center;
+  display: flex;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: 0.75rem; }
+  .card-footer-item:not(:last-child) {
+    border-right: 1px solid #dbdbdb; }
+
+.card {
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  color: #4a4a4a;
+  max-width: 100%;
+  position: relative; }
+  .card .media:not(:last-child) {
+    margin-bottom: 0.75rem; }
+
+body {
+  background-color: #66ccff; }
+
+.App {
+  height: 100vh;
+  width: 100vw; }

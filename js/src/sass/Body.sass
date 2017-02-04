@@ -1,0 +1,37 @@
+@import 'variables'
+section
+  background-color: rgb(241, 241, 241)
+  //box-shadow: 5px 5px 5px rgba(2, 32, 14, 0.4)
+  animation: 
+        name: content-sidein
+        duration: .5s
+        timing-function: ease-in
+
+.top-bar
+  width: 100%
+  height: 3vh
+  background-color: rgb(0, 0, 51)
+  color: grey 
+  vertical-align: bottom
+
+.content
+  padding: 15px
+  font-family: $google-libre
+  font-size: 2vh
+
+ 
+
+
+//Nav animation drop down
+@keyframes content-sidein
+        0% 
+          transform: translateY(+100%)
+          opacity: 0.25
+        50%
+          opacity: 0.5
+        75%
+          opacity: 0.75
+        100%
+          transform: translateY(0)
+          opacity: 1
+    
