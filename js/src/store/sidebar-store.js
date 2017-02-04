@@ -1,4 +1,4 @@
-import { action, observable, computed, toJS} from 'mobx';
+import { action, observable, toJS} from 'mobx';
 
 class SideBarDataStore {
 
@@ -7,7 +7,6 @@ class SideBarDataStore {
      *  containing
      *    id: integer
      *    name: string
-     *    active: boolean
      */
     @observable navLinks = [
         { 
@@ -17,7 +16,7 @@ class SideBarDataStore {
         },
         {
             id: 1,
-            name: "Places I love",
+            name: "To Come",
             active: false
         }
     ];
@@ -40,7 +39,3 @@ class SideBarDataStore {
 }
 
 export default SideBarDataStore;
-
-
-//Data Store Singelton 
-//export default sideBarStore;
