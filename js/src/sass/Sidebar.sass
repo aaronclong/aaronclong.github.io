@@ -150,11 +150,12 @@
      width: 100vw
 
   .profile
-    padding-left: 20vw
+    //padding-left: 20vw
     height: 40vw
     width: 40vw
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%)
     clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%)
+    float: left
 
   .profile-pic
     width: 100%
@@ -166,26 +167,18 @@
     height: 100%
 
     li 
+      float: right
+      display: inline
+      border-radius: 5px
       font-size: 2vh
-      height: 10vw
-      width: 30vw
+      height: 7vw
+      width: 20vw
       background-color: rgb(241, 241, 241) //#f9f9f9
       -webkit-filter: drop-shadow( 6px 0 2px hsla(0, 0%, 0%, 0.2))
       filter: drop-shadow( 6px 0 2px hsla(0, 0%, 0%, 0.2))
+      vertical-align: middle
       padding: 10px 14px
-      //z-index: 0
       animation: 
         name: li-down
         duration: .75s
         timing-function: ease
-      
-  
-      //Hover
-      &:nth-child(odd)
-	      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 75%, 25% 100%, 25% 75%, 0% 75%)
-        clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 75%, 25% 100%, 25% 75%, 0% 75%)
-        float: left
-      &:nth-child(even)
-        -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%)
-        clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%)
-        float: right
