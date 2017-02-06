@@ -42,7 +42,7 @@ class Sidebar extends Component {
     render() {
       let list = this.props.store.getLinks(make_list);
       return (
-           <Flexbox element="aside" margin="4vh" minHeight="100vh">
+           <Flexbox element="aside" margin="4vh">
             { nav({ list }) }
           </Flexbox>
       );

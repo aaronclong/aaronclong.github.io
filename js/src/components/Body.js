@@ -14,7 +14,7 @@ class Body extends Component {
        }
       
        return(
-          <Flexbox element="section" marginRight="4vh" flexDirection="column" width="60vh">
+          <Flexbox element="section" marginRight="4vh" flexDirection="column">
             <div className="top-bar"></div>
             <div className="content">
               { content() }

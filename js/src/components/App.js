@@ -6,12 +6,18 @@ import Sidebar from './Sidebar';
 import Store from '../store/Singleton'
 import '../sass/App.sass';
 
+const flexLayout = () => {
+  console.log(window.innerHeight)
+  if (window.innerHeight < 768) return "column"
+  return "row";
+}
+
 class App extends Component {
   render() {
     const { BodyDataStore, SideBarDataStore } = Store;
     return (
       <div className="App">
-        <Flexbox flexDirection="row" minHeight="100%">
+        <Flexbox flexDirection={ flexLayout() } minHeight="100%">
           < Sidebar store={ SideBarDataStore } />
           < Body store={ BodyDataStore } />
         </Flexbox>
