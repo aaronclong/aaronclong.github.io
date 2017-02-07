@@ -8,12 +8,29 @@ class BodyDataStore {
        //One
         "My name is Aaron Long, and I'm a recent Temple University grad in the Philadelphia Area." +
         " I love technology and pushing my understanding of it, either through programming or learning new applications." +
-        " Recently I've become obsessed with learning about functional programming, HTTP/2, and websecurity." +
-        " However, I often find myself jumping from topic to topic, following where my interest leads me." +
-        " I believe strongly in GIS technology, and underutilized capabilties of GIS to fix modern problems." +
+        " Recently I've become obsessed with learning about functional paradigms, HTTP/2, and websecurity." +
+        " However, I often find myself jumping from topic to topic, following where my interests lead me." +
+        " I believe strongly in GIS technology, and the underutilized capabilties of GIS to fix modern problems." +
         " If you have any quesions, drop me a [line](mailto:aaron.long.c@gmail.com). ",
         //Two
-        "I'm going to leave the corny, stay tuned. I am still setting this webpage up. :)"
+        "I've been building websites since broadband arrived at my house as a kid." +
+        " I've found myself coming back and forth to web development, simple hacking, and other geeky-things since then." +
+        " During college, I've truly attempted to hone my skills and developed a proficiency in the following languages.\n\n"
+        +"+ Java 8\n"+
+        "+ Python 2.7/3.5\n"+
+        "+ SQL\n" +
+        "  + MySQL\n" +
+        "  + Postgres\n" +
+        "+ NodeJS\n" +
+        "+ ES6 JavaScript\n" +
+        "+ ReactJS\n" +
+        "+ CSS\n" +
+        "+ HTML\n",
+
+        "When I'm not pounding away at my keyboard, I generally find myself reading, watching youtube, urban exploring, and feeding my coffee addiction." +
+        "\n\nP.S. I love GIFs!!!\n\n" +
+        "![Cats Being Cats](https://i.imgur.com/sXDYnDe.gif)"
+
     ];
 
 

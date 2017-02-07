@@ -16,7 +16,12 @@ class SideBarDataStore {
         },
         {
             id: 1,
-            name: "To Come",
+            name: "My Skills",
+            active: false
+        },
+        {
+            id: 2,
+            name: "Hobbies",
             active: false
         }
     ];
