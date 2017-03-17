@@ -25,7 +25,11 @@ class BodyDataStore {
         "+ ES6 JavaScript\n" +
         "+ ReactJS\n" +
         "+ CSS\n" +
-        "+ HTML\n",
+        "+ HTML\n" +
+        "\nI am currently building up my portfolio and exploring my interest, " +
+        "here are a few that I am a little proud of.\n" +
+        "- ### [Socket.io Experiment](https://github.com/aaronclong/react-polling)\n" +
+        "- ### [Volunteer Generator](https://github.com/aaronclong/volunteer-generator)\n",
 
         "When I'm not pounding away at my keyboard, I generally find myself reading, watching youtube, urban exploring, and feeding my coffee addiction." +
         "\n\nP.S. I love GIFs!!!\n\n" +
