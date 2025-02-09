@@ -1,0 +1,115 @@
+{
+  "skills": {
+    "languages": [
+      {
+        "id": "py",
+        "name": "Python",
+        "type": "language"
+      },
+      {
+        "id": "js",
+        "name": "JavaScript",
+        "type": "language"
+      },
+      {
+        "id": "ts",
+        "name": "TypeScript",
+        "type": "language"
+      },
+      {
+        "id": "c#",
+        "name": "CSharp",
+        "type": "language"
+      },
+      {
+        "id": "sql",
+        "name": "SQL",
+        "type": "language"
+      },
+      {
+        "id": "java",
+        "name": "Java",
+        "type": "language"
+      }
+    ],
+    "frameworks": [
+      {
+        "id": "react",
+        "name": "React",
+        "type": "framework",
+        "language": "js"
+      },
+      {
+        "id": "vue",
+        "name": "Vue",
+        "type": "framework",
+        "language": "js"
+      },
+      {
+        "id": "ng",
+        "name": "Angular",
+        "type": "framework",
+        "language": "js"
+      }
+    ],
+    "libraries": [
+      {
+        "id": "pd",
+        "name": "Pandas",
+        "type": "library",
+        "language": "py"
+      }
+    ]
+  },
+  "positions": [
+    {
+      "company": "IKEA",
+      "role": "Software Engineer",
+      "startDate": "2023-04-2023",
+      "endDate": "null",
+      "skills": ["py", "sql", "js", "react"],
+      "keyResults": [
+        "Designed and implemented web based barcode scanner for IKEA’s Gift Registry platform",
+        "Enhanced GraphQL API for new business use cases and hardened security with WAF"
+      ]
+    },
+    {
+      "company": "Vanguard",
+      "role": "Software Engineer",
+      "startDate": "2020-09-01",
+      "endDate": "2023-04-01",
+      "skills": ["py", "sql", "py", "vute"],
+      "keyResults": [
+        "Designed and implemented web based barcode scanner for IKEA’s Gift Registry platform",
+        "Enhanced GraphQL API for new business use cases and hardened security with WAF"
+      ]
+    },
+    {
+      "company": "Astarte Medical",
+      "role": "Software Engineer",
+      "startDate": "2020-01-01",
+      "endDate": "2020-09-01",
+      "skills": ["py", "pd", "c#", "sql", "js", "ts", "ng"],
+      "keyResults": [
+        "Converted POC app to full CI/CD environment utilizing Kubernetes, AWS, and Docker",
+        "Designed and developed initial cloud infrastructure on AWS for public facing website, internal tools, and third party integrations",
+        "Developed Asp.Net Core Web Service and Angular front-end to display critical bioindicators for pediatric medicine"
+      ]
+    },
+
+    {
+      "company": "Chatham Financial, Kennette Square PA",
+      "role": "Software Developer",
+      "startDate": "2018-05-2018",
+      "endDate": "null",
+      "skills": ["c#", "sql", "js", "ts", "react"],
+      "keyResults": [
+        "Enabled Option and Swap Pricing models via AspNet Core APIs and React front-ends",
+        "Transitioned legacy DotNet 4 apps to DotNet Core/cross-platform DotNet",
+        "Implemented End-to-End testing strategies with Puppeteer, Selenium, and Xunit",
+        "Optimized CI/CD pipelines to 4-5 minutes from 10 minutes with caching, Docker image optimization, and asynchronous test execution",
+        "Helped build test tracking web dashboard in Ruby and Angular to monitor failures and outputs"
+      ]
+    }
+  ]
+}
