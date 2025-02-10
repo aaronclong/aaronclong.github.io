@@ -21,9 +21,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export function Resume() {
   const [positions, setPositions] = useState([]);
   useEffect(() => {
-    fetchResume()
-      .then((response) => response.json())
-      .then((data) => setPositions(data.positions));
+    fetchResume().then((data) => setPositions(data.positions));
   });
   return (
     <Box sx={{ width: "100%" }}>
