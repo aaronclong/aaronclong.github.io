@@ -59,6 +59,45 @@
         "type": "library",
         "language": "py"
       }
+    ],
+    "infra": [
+      {
+        "id": "docker",
+        "name": "Docker",
+        "type": "infra",
+        "system": "container"
+      },
+      {
+        "id": "cloudrun",
+        "type": "infra",
+        "system": "container",
+        "cloudProvider": "gcp"
+      },
+      {
+        "id": "k8s",
+        "type": "infra",
+        "name": "Kubernetes",
+        "system": "orchestration"
+      },
+      {
+        "id": "lambda",
+        "type": "infra",
+        "system": "serverless"
+      }
+    ],
+    "cloudProviders": [
+      {
+        "id": "aws",
+        "acronym": "AWS",
+        "name": "Amazon Web Services",
+        "type": "cloudProvider"
+      },
+      {
+        "id": "gcp",
+        "acronym": "GCP",
+        "name": "Google Cloud Platform",
+        "type": "cloudProvider"
+      }
     ]
   },
   "positions": [
@@ -67,10 +106,11 @@
       "role": "Software Engineer",
       "startDate": "2023-04-2023",
       "endDate": "null",
-      "skills": ["py", "sql", "js", "react"],
+      "skills": ["py", "sql", "js", "react", "gcp"],
       "keyResults": [
         "Designed and implemented web based barcode scanner for IKEA’s Gift Registry platform",
-        "Enhanced GraphQL API for new business use cases and hardened security with WAF"
+        "Enhanced GraphQL API for new business use cases and hardened security with WAF",
+        "Built GCP Cloud based solutions utilizing Cloud Run, Cloud Functions, and BigQuery"
       ]
     },
     {
@@ -78,7 +118,7 @@
       "role": "Software Engineer",
       "startDate": "2020-09-01",
       "endDate": "2023-04-01",
-      "skills": ["py", "sql", "py", "vute"],
+      "skills": ["py", "sql", "py", "vue", "js", "ts", "aws", "docker"],
       "keyResults": [
         "Designed and implemented web based barcode scanner for IKEA’s Gift Registry platform",
         "Enhanced GraphQL API for new business use cases and hardened security with WAF"
@@ -89,7 +129,18 @@
       "role": "Software Engineer",
       "startDate": "2020-01-01",
       "endDate": "2020-09-01",
-      "skills": ["py", "pd", "c#", "sql", "js", "ts", "ng"],
+      "skills": [
+        "py",
+        "pd",
+        "c#",
+        "sql",
+        "js",
+        "ts",
+        "ng",
+        "aws",
+        "k8s",
+        "docker"
+      ],
       "keyResults": [
         "Converted POC app to full CI/CD environment utilizing Kubernetes, AWS, and Docker",
         "Designed and developed initial cloud infrastructure on AWS for public facing website, internal tools, and third party integrations",
@@ -98,10 +149,11 @@
     },
 
     {
-      "company": "Chatham Financial, Kennette Square PA",
+      "company": "Chatham Financial",
+      "location": "Kennette Square PA",
       "role": "Software Developer",
-      "startDate": "2018-05-2018",
-      "endDate": "null",
+      "startDate": "2017-08-01",
+      "endDate": "2020-01-01",
       "skills": ["c#", "sql", "js", "ts", "react"],
       "keyResults": [
         "Enabled Option and Swap Pricing models via AspNet Core APIs and React front-ends",
