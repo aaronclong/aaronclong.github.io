@@ -69,20 +69,29 @@
       },
       {
         "id": "cloudrun",
+        "name": "GCP Cloud Run",
         "type": "infra",
         "system": "container",
         "cloudProvider": "gcp"
       },
       {
         "id": "k8s",
-        "type": "infra",
         "name": "Kubernetes",
+        "type": "infra",
         "system": "orchestration"
       },
       {
         "id": "lambda",
+        "name": "AWS Lambda",
         "type": "infra",
-        "system": "serverless"
+        "system": "faas",
+        "cloudProvider": "aws"
+      },
+      {
+        "id": "ecs",
+        "type": "infra",
+        "system": "faas",
+        "cloudProvider": "aws"
       }
     ],
     "cloudProviders": [
@@ -118,10 +127,23 @@
       "role": "Software Engineer",
       "startDate": "2020-09-01",
       "endDate": "2023-04-01",
-      "skills": ["py", "sql", "py", "vue", "js", "ts", "aws", "docker"],
+      "skills": [
+        "py",
+        "sql",
+        "py",
+        "vue",
+        "js",
+        "ts",
+        "aws",
+        "docker",
+        "lambda",
+        "ecs"
+      ],
       "keyResults": [
-        "Designed and implemented web based barcode scanner for IKEA’s Gift Registry platform",
-        "Enhanced GraphQL API for new business use cases and hardened security with WAF"
+        "Develop and lead fund optimization strategies utilizing Python microservices saving investors millions of dollars",
+        "Created internal Python SDK for an external vendor's web API utilizing requests and aiohttp",
+        "Utilized AWS Glue and AWS Lambda for real-time hydration of business-critical data into data lake",
+        "Train and mentor fellow developers on cloud development, microservices, and event-driven architectures"
       ]
     },
     {
@@ -139,6 +161,7 @@
         "ng",
         "aws",
         "k8s",
+        "lambda",
         "docker"
       ],
       "keyResults": [
@@ -147,7 +170,6 @@
         "Developed Asp.Net Core Web Service and Angular front-end to display critical bioindicators for pediatric medicine"
       ]
     },
-
     {
       "company": "Chatham Financial",
       "location": "Kennette Square PA",
