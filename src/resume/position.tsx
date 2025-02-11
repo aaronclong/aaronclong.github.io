@@ -22,10 +22,12 @@ export function PositionCard({ company, role, keyResults }: PositionProps) {
           >
             {company} - {role}
           </Typography>
-          <Typography variant="body2">
-            {keyResults.map((result) => (
-              <p key={result}>{result}</p>
-            ))}
+          <Typography variant="body2" align="left">
+            <ul>
+              {keyResults.map((result) => (
+                <li key={result}>{result}</li>
+              ))}
+            </ul>
           </Typography>
         </CardContent>
       </Card>
