@@ -180,7 +180,7 @@
       "keyResults": [
         "Enabled Option and Swap Pricing models via AspNet Core APIs and React front-ends",
         "Transitioned legacy DotNet 4 apps to DotNet Core/cross-platform DotNet",
-        "Implemented End-to-End testing strategies with Puppeteer, Selenium, and Xunit",
+        "Implemented End-to-End testing strategies with Puppeteer, Selenium, and xUnit",
         "Optimized CI/CD pipelines to 4-5 minutes from 10 minutes with caching, Docker image optimization, and asynchronous test execution",
         "Helped build test tracking web dashboard in Ruby and Angular to monitor failures and outputs"
       ]
