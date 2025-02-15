@@ -60,13 +60,23 @@ const DateChip = ({
 
 export function KeyResultList({ keyResults }: { keyResults: string[] }) {
   return (
-    <List>
-      {keyResults.map((result) => (
-        <ListItem key={result}>
-          <ListItemText primary={result} />
-        </ListItem>
-      ))}
-    </List>
+    <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <List sx={{ textAlign: "left", wordWrap: "break-word", maxWidth: "80%" }}>
+        {keyResults.map((result) => (
+          <ListItem key={result}>
+            <ListItemText
+              primary={result}
+              slotProps={{
+                primary: {
+                  whiteSpace: "normal",
+                  // wordBreak: "break-word",
+                },
+              }}
+            />
+          </ListItem>
+        ))}
+      </List>
+    </Box>
   );
 }
 
