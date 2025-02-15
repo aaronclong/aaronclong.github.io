@@ -113,8 +113,8 @@
     {
       "company": "IKEA",
       "role": "Software Engineer",
-      "startDate": "2023-04-2023",
-      "endDate": "null",
+      "startDate": "2023-04-01",
+      "endDate": null,
       "skills": ["py", "sql", "js", "react", "gcp"],
       "keyResults": [
         "Designed and implemented web based barcode scanner for IKEA’s Gift Registry platform",
