@@ -12,7 +12,7 @@ export function Resume() {
   const [positions, setPositions] = useState<Position[]>([]);
   useEffect(() => {
     fetchResume().then((data) => setPositions(data.positions));
-  });
+  }, []);
 
   return (
     <Box sx={{ width: "100%" }}>
