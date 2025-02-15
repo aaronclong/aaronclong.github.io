@@ -1,14 +1,3 @@
-// import Box from "@mui/material/Box";
-// import Card from "@mui/material/Card";
-// import CardContent from "@mui/material/CardContent";
-// import Chip from "@mui/material/Chip";
-// import Typography from "@mui/material/Typography";
-// import List from "@mui/material/List";
-// import ListItem from "@mui/material/ListItem";
-// import ListItemButton from "@mui/material/ListItemButton";
-// import ListItemIcon from "@mui/material/ListItemIcon";
-// import ListItemText from "@mui/material/ListItemText";
-
 import {
   Box,
   Card,
@@ -50,7 +39,9 @@ const DateChip = ({
       size="small"
       label={
         <>
-          <span>{identifier}: </span>
+          <Typography component="span" variant="body2" sx={{ fontWeight: 500 }}>
+            {identifier}:
+          </Typography>{" "}
           {formatted}
         </>
       }
@@ -69,7 +60,6 @@ export function KeyResultList({ keyResults }: { keyResults: string[] }) {
               slotProps={{
                 primary: {
                   whiteSpace: "normal",
-                  // wordBreak: "break-word",
                 },
               }}
             />
