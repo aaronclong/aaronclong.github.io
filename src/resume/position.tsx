@@ -1,8 +1,26 @@
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Chip from "@mui/material/Chip";
-import Typography from "@mui/material/Typography";
+// import Box from "@mui/material/Box";
+// import Card from "@mui/material/Card";
+// import CardContent from "@mui/material/CardContent";
+// import Chip from "@mui/material/Chip";
+// import Typography from "@mui/material/Typography";
+// import List from "@mui/material/List";
+// import ListItem from "@mui/material/ListItem";
+// import ListItemButton from "@mui/material/ListItemButton";
+// import ListItemIcon from "@mui/material/ListItemIcon";
+// import ListItemText from "@mui/material/ListItemText";
+
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  List,
+  ListItem,
+  ListItemText,
+  Chip,
+  ChipOwnProps,
+  Stack,
+} from "@mui/material";
 
 import { parse, format } from "date-fns";
 
@@ -17,19 +35,19 @@ const formatDate = (date: string) =>
 const DateChip = ({
   date,
   identifier,
+  color,
 }: {
   date: string;
   identifier: string;
+  color?: ChipOwnProps["color"];
 }) => {
-  console.log("render");
   const formatted = formatDate(date);
   // TODO: Make identifier by theme
   // https://mui.com/material-ui/customization/creating-themed-components/
   return (
     <Chip
-      color="secondary"
+      color={color ?? "primary"}
       size="small"
-      // label={formatted}
       label={
         <>
           <span>{identifier}: </span>
@@ -39,6 +57,18 @@ const DateChip = ({
     />
   );
 };
+
+export function KeyResultList({ keyResults }: { keyResults: string[] }) {
+  return (
+    <List>
+      {keyResults.map((result) => (
+        <ListItem key={result}>
+          <ListItemText primary={result} />
+        </ListItem>
+      ))}
+    </List>
+  );
+}
 
 interface PositionProps {
   role: string;
@@ -60,22 +90,23 @@ export function PositionCard({
     <Box sx={{ minWidth: 275 }}>
       <Card variant="outlined">
         <CardContent>
-          <Typography
-            gutterBottom
-            sx={{ color: "text.secondary", fontSize: 14 }}
+          <Typography variant="h5" component="div" gutterBottom>
+            {company}
+          </Typography>
+          <Typography variant="subtitle1" color="text.secondary">
+            {role}
+          </Typography>
+          <Stack
+            direction="row"
+            spacing={1}
+            sx={{ marginBottom: 1, justifyContent: "center" }}
           >
-            {company} - {role}
-            <br />
             <DateChip date={startDate} identifier="start" />
-            {endDate && <DateChip date={endDate} identifier="end" />}
-          </Typography>
-          <Typography variant="body2" align="left">
-            <ul>
-              {keyResults.map((result) => (
-                <li key={result}>{result}</li>
-              ))}
-            </ul>
-          </Typography>
+            {endDate && (
+              <DateChip date={endDate} color="secondary" identifier="end" />
+            )}
+          </Stack>
+          <KeyResultList keyResults={keyResults} />
         </CardContent>
       </Card>
     </Box>
