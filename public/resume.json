@@ -50,6 +50,12 @@
         "name": "Angular",
         "type": "framework",
         "language": "js"
+      },
+      {
+        "id": "apollo",
+        "name": "Apollo GraphQL",
+        "type": "framework",
+        "language": "js"
       }
     ],
     "libraries": [
