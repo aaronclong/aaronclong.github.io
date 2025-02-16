@@ -17,6 +17,9 @@ importers:
       '@mui/material':
         specifier: ^6.4.1
         version: 6.4.1(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      aws-icons:
+        specifier: ^2.1.0
+        version: 2.1.0
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
@@ -744,6 +747,9 @@ packages:
 
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
+
+  aws-icons@2.1.0:
+    resolution: {integrity: sha512-1uIL6naGfcdf6wNavno/7aMJRLan+Cw3+3IuVRrd+ghqTxp4TiyVb6DV01oq9ImzTBgSTBBYU+shjEiRL+qS6g==}
 
   babel-plugin-macros@3.1.0:
     resolution: {integrity: sha512-Cg7TFGpIr01vOQNODXOOaGz2NpCU5gl8x1qJFbb6hbZxR7XrcE2vtbAsTAbJ7/xwJtUuJEw8K8Zr/AE0LHlesg==}
@@ -1914,6 +1920,8 @@ snapshots:
       color-convert: 2.0.1
 
   argparse@2.0.1: {}
+
+  aws-icons@2.1.0: {}
 
   babel-plugin-macros@3.1.0:
     dependencies:
