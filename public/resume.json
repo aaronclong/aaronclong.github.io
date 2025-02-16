@@ -1,0 +1,189 @@
+{
+  "skills": {
+    "languages": [
+      {
+        "id": "py",
+        "name": "Python",
+        "type": "language"
+      },
+      {
+        "id": "js",
+        "name": "JavaScript",
+        "type": "language"
+      },
+      {
+        "id": "ts",
+        "name": "TypeScript",
+        "type": "language"
+      },
+      {
+        "id": "c#",
+        "name": "CSharp",
+        "type": "language"
+      },
+      {
+        "id": "sql",
+        "name": "SQL",
+        "type": "language"
+      },
+      {
+        "id": "java",
+        "name": "Java",
+        "type": "language"
+      }
+    ],
+    "frameworks": [
+      {
+        "id": "react",
+        "name": "React",
+        "type": "framework",
+        "language": "js"
+      },
+      {
+        "id": "vue",
+        "name": "Vue",
+        "type": "framework",
+        "language": "js"
+      },
+      {
+        "id": "ng",
+        "name": "Angular",
+        "type": "framework",
+        "language": "js"
+      }
+    ],
+    "libraries": [
+      {
+        "id": "pd",
+        "name": "Pandas",
+        "type": "library",
+        "language": "py"
+      }
+    ],
+    "infra": [
+      {
+        "id": "docker",
+        "name": "Docker",
+        "type": "infra",
+        "system": "container"
+      },
+      {
+        "id": "cloudrun",
+        "name": "GCP Cloud Run",
+        "type": "infra",
+        "system": "container",
+        "cloudProvider": "gcp"
+      },
+      {
+        "id": "k8s",
+        "name": "Kubernetes",
+        "type": "infra",
+        "system": "orchestration"
+      },
+      {
+        "id": "lambda",
+        "name": "AWS Lambda",
+        "type": "infra",
+        "system": "faas",
+        "cloudProvider": "aws"
+      },
+      {
+        "id": "ecs",
+        "type": "infra",
+        "system": "faas",
+        "cloudProvider": "aws"
+      }
+    ],
+    "cloudProviders": [
+      {
+        "id": "aws",
+        "acronym": "AWS",
+        "name": "Amazon Web Services",
+        "type": "cloudProvider"
+      },
+      {
+        "id": "gcp",
+        "acronym": "GCP",
+        "name": "Google Cloud Platform",
+        "type": "cloudProvider"
+      }
+    ]
+  },
+  "positions": [
+    {
+      "company": "IKEA",
+      "role": "Software Engineer",
+      "startDate": "2023-04-01",
+      "endDate": null,
+      "skills": ["py", "sql", "js", "react", "gcp"],
+      "keyResults": [
+        "Designed and implemented web based barcode scanner for IKEA’s Gift Registry platform",
+        "Enhanced GraphQL API for new business use cases and hardened security with WAF",
+        "Built GCP Cloud based solutions utilizing Cloud Run, Cloud Functions, and BigQuery"
+      ]
+    },
+    {
+      "company": "Vanguard",
+      "role": "Software Engineer",
+      "startDate": "2020-09-01",
+      "endDate": "2023-04-01",
+      "skills": [
+        "py",
+        "sql",
+        "py",
+        "vue",
+        "js",
+        "ts",
+        "aws",
+        "docker",
+        "lambda",
+        "ecs"
+      ],
+      "keyResults": [
+        "Develop and lead fund optimization strategies utilizing Python microservices saving investors millions of dollars",
+        "Created internal Python SDK for an external vendor's web API utilizing requests and aiohttp",
+        "Utilized AWS Glue and AWS Lambda for real-time hydration of business-critical data into data lake",
+        "Train and mentor fellow developers on cloud development, microservices, and event-driven architectures"
+      ]
+    },
+    {
+      "company": "Astarte Medical",
+      "role": "Software Engineer",
+      "startDate": "2020-01-01",
+      "endDate": "2020-09-01",
+      "skills": [
+        "py",
+        "pd",
+        "c#",
+        "sql",
+        "js",
+        "ts",
+        "ng",
+        "aws",
+        "k8s",
+        "lambda",
+        "docker"
+      ],
+      "keyResults": [
+        "Converted POC app to full CI/CD environment utilizing Kubernetes, AWS, and Docker",
+        "Designed and developed initial cloud infrastructure on AWS for public facing website, internal tools, and third party integrations",
+        "Developed Asp.Net Core Web Service and Angular front-end to display critical bioindicators for pediatric medicine"
+      ]
+    },
+    {
+      "company": "Chatham Financial",
+      "location": "Kennette Square PA",
+      "role": "Software Developer",
+      "startDate": "2017-08-01",
+      "endDate": "2020-01-01",
+      "skills": ["c#", "sql", "js", "ts", "react"],
+      "keyResults": [
+        "Enabled Option and Swap Pricing models via AspNet Core APIs and React front-ends",
+        "Transitioned legacy DotNet 4 apps to DotNet Core/cross-platform DotNet",
+        "Implemented End-to-End testing strategies with Puppeteer, Selenium, and xUnit",
+        "Optimized CI/CD pipelines to 4-5 minutes from 10 minutes with caching, Docker image optimization, and asynchronous test execution",
+        "Helped build test tracking web dashboard in Ruby and Angular to monitor failures and outputs"
+      ]
+    }
+  ]
+}
