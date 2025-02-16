@@ -105,7 +105,9 @@ export function PositionCard({
             )}
           </Stack>
           <KeyResultList keyResults={keyResults} />
-          <SkillBadge skill={skills[0] as SkillId} />
+          {skills.map((skill) => {
+            return <SkillBadge skill={skill as SkillId} />;
+          })}
         </CardContent>
       </Card>
     </Box>
