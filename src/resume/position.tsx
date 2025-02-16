@@ -12,6 +12,9 @@ import {
 } from "@mui/material";
 
 import { parse, format } from "date-fns";
+import { Position } from "./types";
+import { SkillBadge } from "./skills-badges";
+import { SkillId } from "../skill-icon-map";
 
 /**
  * Probably overkill but provides flexibility if I want to change the format later
@@ -70,13 +73,7 @@ export function KeyResultList({ keyResults }: { keyResults: string[] }) {
   );
 }
 
-interface PositionProps {
-  role: string;
-  company: string;
-  startDate: string;
-  endDate: string;
-  keyResults: string[];
-}
+type PositionProps = Position;
 
 // https://mui.com/material-ui/customization/typography/#adding-amp-disabling-variants
 export function PositionCard({
@@ -85,6 +82,7 @@ export function PositionCard({
   keyResults,
   startDate,
   endDate,
+  skills,
 }: PositionProps) {
   return (
     <Box sx={{ minWidth: 275 }}>
@@ -107,6 +105,7 @@ export function PositionCard({
             )}
           </Stack>
           <KeyResultList keyResults={keyResults} />
+          <SkillBadge skill={skills[0] as SkillId} />
         </CardContent>
       </Card>
     </Box>
