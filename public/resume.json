@@ -134,6 +134,7 @@
       "startDate": "2020-09-01",
       "endDate": "2023-04-01",
       "skills": [
+        "pd",
         "py",
         "sql",
         "py",
@@ -158,8 +159,6 @@
       "startDate": "2020-01-01",
       "endDate": "2020-09-01",
       "skills": [
-        "py",
-        "pd",
         "c#",
         "sql",
         "js",
