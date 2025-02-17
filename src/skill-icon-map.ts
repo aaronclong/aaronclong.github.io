@@ -10,9 +10,11 @@ import JavaScriptIcon from "devicon/icons/javascript/javascript-original.svg?url
 import KubernetesIcon from "devicon/icons/kubernetes/kubernetes-original.svg?url";
 // import LambdaIcon from "devicon/icons/aws/aws-original.svg?url";
 import AWSLambdaIcon from "aws-icons/icons/architecture-service/AWSLambda.svg?url";
+import PandasIcon from "./assets/icons/pandas.svg?url";
 import PythonIcon from "devicon/icons/python/python-original.svg?url";
 import ReactIcon from "devicon/icons/react/react-original.svg?url";
-import SqlIcon from "devicon/icons/mysql/mysql-original.svg?url";
+import TypeSciptIcon from "devicon/icons/typescript/typescript-original.svg?url";
+import SqlIcon from "devicon/icons/sqldeveloper/sqldeveloper-original.svg?url";
 import VueIcon from "devicon/icons/vuejs/vuejs-original.svg?url";
 
 // import JavaScriptIcon from "devicon/icons/javascript/javascript-original.svg?url";
@@ -20,6 +22,7 @@ import VueIcon from "devicon/icons/vuejs/vuejs-original.svg?url";
 // import ReactIcon from "devicon/icons/react/react-original.svg?url";
 
 export enum SkillId {
+  pd = "pd",
   py = "py",
   js = "js",
   ts = "ts",
@@ -39,9 +42,10 @@ export enum SkillId {
 }
 
 export const skillIconMap = Object.freeze({
+  [SkillId.pd]: PandasIcon,
   [SkillId.py]: PythonIcon,
   [SkillId.js]: JavaScriptIcon,
-  [SkillId.ts]: ReactIcon,
+  [SkillId.ts]: TypeSciptIcon,
   [SkillId.cSharp]: CSharpIcon,
   [SkillId.sql]: SqlIcon,
   [SkillId.java]: JavaIcon,
