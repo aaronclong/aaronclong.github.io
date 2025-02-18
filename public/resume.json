@@ -95,9 +95,17 @@
       },
       {
         "id": "ecs",
+        "name": "AWS ECS",
         "type": "infra",
         "system": "faas",
         "cloudProvider": "aws"
+      },
+      {
+        "id": "gcf",
+        "name": "GCP Cloud Run Functions",
+        "type": "infra",
+        "system": "faas",
+        "cloudProvider": "gcp"
       }
     ],
     "cloudProviders": [
