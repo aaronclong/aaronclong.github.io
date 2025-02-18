@@ -2,6 +2,7 @@ import {
   Box,
   Card,
   CardContent,
+  Divider,
   Typography,
   List,
   ListItem,
@@ -21,19 +22,26 @@ import { SkillId } from "../skill-icon-map";
  * @param date
  * @returns
  */
-const formatDate = (date: string) =>
-  format(parse(date, "yyyy-MM-dd", new Date()), "yyyy-MM");
+const formatDate = (date?: string) => {
+  if (!date) {
+    return "";
+  }
+
+  return format(parse(date, "yyyy-MM-dd", new Date()), "yyyy-MM");
+};
 
 const DateChip = ({
   date,
   identifier,
   color,
+  current,
 }: {
-  date: string;
+  date?: string;
   identifier: string;
   color?: ChipOwnProps["color"];
+  current?: true;
 }) => {
-  const formatted = formatDate(date);
+  const formatted = current ? "Present" : formatDate(date);
   // TODO: Make identifier by theme
   // https://mui.com/material-ui/customization/creating-themed-components/
   return (
@@ -42,9 +50,15 @@ const DateChip = ({
       size="small"
       label={
         <>
-          <Typography component="span" variant="body2" sx={{ fontWeight: 500 }}>
-            {identifier}:
-          </Typography>{" "}
+          {!current && (
+            <Typography
+              component="span"
+              variant="body2"
+              sx={{ fontWeight: 500 }}
+            >
+              {identifier}:
+            </Typography>
+          )}{" "}
           {formatted}
         </>
       }
@@ -94,20 +108,28 @@ export function PositionCard({
           <Typography variant="subtitle1" color="text.secondary">
             {role}
           </Typography>
+
           <Stack
             direction="row"
             spacing={1}
             sx={{ marginBottom: 1, justifyContent: "center" }}
           >
             <DateChip date={startDate} identifier="start" />
-            {endDate && (
-              <DateChip date={endDate} color="secondary" identifier="end" />
-            )}
+
+            <DateChip
+              date={endDate}
+              current
+              color="secondary"
+              identifier="end"
+            />
           </Stack>
+          <Divider />
+          <Box component="section" sx={{ p: 2 }}>
+            {skills.map((skill) => {
+              return <SkillBadge key={skill} skill={skill as SkillId} />;
+            })}
+          </Box>
           <KeyResultList keyResults={keyResults} />
-          {skills.map((skill) => {
-            return <SkillBadge skill={skill as SkillId} />;
-          })}
         </CardContent>
       </Card>
     </Box>
