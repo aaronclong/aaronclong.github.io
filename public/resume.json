@@ -56,6 +56,18 @@
         "name": "Apollo GraphQL",
         "type": "framework",
         "language": "js"
+      },
+      {
+        "id": "fastapi",
+        "name": "FastAPI",
+        "type": "framework",
+        "language": "py"
+      },
+      {
+        "id": "flask",
+        "name": "Flask",
+        "type": "framework",
+        "language": "py"
       }
     ],
     "libraries": [
@@ -106,6 +118,13 @@
         "type": "infra",
         "system": "faas",
         "cloudProvider": "gcp"
+      },
+      {
+        "id": "gcloudarmor",
+        "name": "GCP Cloud Armor",
+        "type": "infra",
+        "system": "waf",
+        "cloudProvider": "gcp"
       }
     ],
     "cloudProviders": [
@@ -129,7 +148,16 @@
       "role": "Software Engineer",
       "startDate": "2023-04-01",
       "endDate": null,
-      "skills": ["py", "sql", "js", "react", "gcp"],
+      "skills": [
+        "py",
+        "sql",
+        "js",
+        "react",
+        "gcp",
+        "gcloudarmor",
+        "gcf",
+        "cloudrun"
+      ],
       "keyResults": [
         "Designed and implemented web based barcode scanner for IKEA’s Gift Registry platform",
         "Enhanced GraphQL API for new business use cases and hardened security with WAF",
