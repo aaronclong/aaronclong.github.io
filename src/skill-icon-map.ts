@@ -1,7 +1,10 @@
 import AngularIcon from "devicon/icons/angular/angular-original.svg?url";
 import AwsIcon from "devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg?url";
 import CSharpIcon from "devicon/icons/csharp/csharp-original.svg?url";
-import CloudRunIcon from "./assets/icons/gcp/cloud_run.svg";
+import CloudRunIcon from "./assets/icons/gcp/cloud_run.svg?url";
+import CloudCloudArmorIcon from "./assets/icons/gcp/cloud_armor.svg?url";
+import FastApiIcon from "devicon/icons/fastapi/fastapi-original.svg?url";
+import FlaskIcon from "devicon/icons/flask/flask-original.svg?url";
 import GcpFunctionIcon from "./assets/icons/gcp/cloud_functions.svg";
 import DockerIcon from "devicon/icons/docker/docker-original.svg?url";
 import AwsEcsIcon from "aws-icons/icons/architecture-service/AmazonECSAnywhere.svg?url";
@@ -36,8 +39,11 @@ export enum SkillId {
   cloudrun = "cloudrun",
   kubernetes = "k8s",
   lambda = "lambda",
+  flask = "flask",
+  fastapi = "fastapi",
   ecs = "ecs",
   gcf = "gcf",
+  gcloudarmor = "gcloudarmor",
   aws = "aws",
   gcp = "gcp",
 }
@@ -57,8 +63,11 @@ export const skillIconMap = Object.freeze({
   [SkillId.cloudrun]: CloudRunIcon,
   [SkillId.kubernetes]: KubernetesIcon,
   [SkillId.lambda]: AWSLambdaIcon, //LambdaIcon,
+  [SkillId.fastapi]: FastApiIcon,
+  [SkillId.flask]: FlaskIcon,
   [SkillId.ecs]: AwsEcsIcon, //EcsIcon,
   [SkillId.gcf]: GcpFunctionIcon,
+  [SkillId.gcloudarmor]: CloudCloudArmorIcon,
   [SkillId.aws]: AwsIcon,
   [SkillId.gcp]: GcpIcon,
 });
