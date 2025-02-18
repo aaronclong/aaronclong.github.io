@@ -39,7 +39,7 @@ const DateChip = ({
   date?: string;
   identifier: string;
   color?: ChipOwnProps["color"];
-  current?: true;
+  current?: boolean;
 }) => {
   const formatted = current ? "Present" : formatDate(date);
   // TODO: Make identifier by theme
@@ -118,7 +118,7 @@ export function PositionCard({
 
             <DateChip
               date={endDate}
-              current
+              current={!endDate}
               color="secondary"
               identifier="end"
             />
