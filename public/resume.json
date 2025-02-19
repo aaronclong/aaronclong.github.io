@@ -30,6 +30,11 @@
         "id": "java",
         "name": "Java",
         "type": "language"
+      },
+      {
+        "id": "hcl",
+        "name": "HCL",
+        "type": "language"
       }
     ],
     "frameworks": [
@@ -125,6 +130,21 @@
         "type": "infra",
         "system": "waf",
         "cloudProvider": "gcp"
+      },
+      {
+        "id": "tf",
+        "name": "Terraform",
+        "type": "infra",
+        "system": "iac",
+        "lang": "hcl"
+      },
+      {
+        "id": "cfn",
+        "name": "AWS CloudFormation",
+        "type": "infra",
+        "system": "iac",
+        "lang": "yaml|json",
+        "cloudProvider": "aws"
       }
     ],
     "cloudProviders": [
@@ -152,7 +172,9 @@
         "py",
         "sql",
         "js",
+        "ts",
         "react",
+        "tf",
         "gcp",
         "gcloudarmor",
         "gcf",
@@ -179,7 +201,8 @@
         "aws",
         "docker",
         "lambda",
-        "ecs"
+        "ecs",
+        "cfn"
       ],
       "keyResults": [
         "Develop and lead fund optimization strategies utilizing Python microservices saving investors millions of dollars",
@@ -198,6 +221,7 @@
         "sql",
         "js",
         "ts",
+        "tf",
         "ng",
         "aws",
         "k8s",
