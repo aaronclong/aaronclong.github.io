@@ -21,10 +21,8 @@ import TerraformIcon from "devicon/icons/terraform/terraform-plain.svg?url";
 import SqlIcon from "devicon/icons/sqldeveloper/sqldeveloper-original.svg?url";
 import VueIcon from "devicon/icons/vuejs/vuejs-original.svg?url";
 import AWSCloudFormationIcon from "aws-icons/icons/architecture-service/AWSCloudFormation.svg?url";
-
-// import JavaScriptIcon from "devicon/icons/javascript/javascript-original.svg?url";
-// import PythonIcon from "devicon/icons/python/python-original.svg?url";
-// import ReactIcon from "devicon/icons/react/react-original.svg?url";
+import GithubActionsIcon from "devicon/icons/githubactions/githubactions-plain.svg?url";
+import GitlabIcon from "devicon/icons/gitlab/gitlab-original.svg?url";
 
 export enum SkillId {
   pd = "pd",
@@ -50,6 +48,8 @@ export enum SkillId {
   gcp = "gcp",
   tf = "tf",
   cfn = "cfn",
+  gha = "gha",
+  gitlab = "gitlab",
 }
 
 export const skillIconMap = Object.freeze({
@@ -76,4 +76,6 @@ export const skillIconMap = Object.freeze({
   [SkillId.gcp]: GcpIcon,
   [SkillId.tf]: TerraformIcon,
   [SkillId.cfn]: AWSCloudFormationIcon,
+  [SkillId.gha]: GithubActionsIcon,
+  [SkillId.gitlab]: GitlabIcon,
 });

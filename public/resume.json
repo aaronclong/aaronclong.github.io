@@ -145,6 +145,20 @@
         "system": "iac",
         "lang": "yaml|json",
         "cloudProvider": "aws"
+      },
+      {
+        "id": "gha",
+        "name": "Github Actions",
+        "type": "infra",
+        "system": "ci",
+        "host": "gh"
+      },
+      {
+        "id": "gitlab",
+        "name": "Gitlab",
+        "type": "infra",
+        "system": "ci",
+        "host": "gitlab"
       }
     ],
     "cloudProviders": [
@@ -178,7 +192,8 @@
         "gcp",
         "gcloudarmor",
         "gcf",
-        "cloudrun"
+        "cloudrun",
+        "gha"
       ],
       "keyResults": [
         "Designed and implemented web based barcode scanner for IKEA’s Gift Registry platform",
@@ -226,7 +241,8 @@
         "aws",
         "k8s",
         "lambda",
-        "docker"
+        "docker",
+        "gitlab"
       ],
       "keyResults": [
         "Converted POC app to full CI/CD environment utilizing Kubernetes, AWS, and Docker",
@@ -240,7 +256,7 @@
       "role": "Software Developer",
       "startDate": "2017-08-01",
       "endDate": "2020-01-01",
-      "skills": ["c#", "sql", "js", "ts", "react"],
+      "skills": ["c#", "sql", "js", "ts", "react", "docker", "gitlab"],
       "keyResults": [
         "Enabled Option and Swap Pricing models via AspNet Core APIs and React front-ends",
         "Transitioned legacy DotNet 4 apps to DotNet Core/cross-platform DotNet",
