@@ -17,8 +17,10 @@ import PandasIcon from "./assets/icons/pandas.svg?url";
 import PythonIcon from "devicon/icons/python/python-original.svg?url";
 import ReactIcon from "devicon/icons/react/react-original.svg?url";
 import TypeSciptIcon from "devicon/icons/typescript/typescript-original.svg?url";
+import TerraformIcon from "devicon/icons/terraform/terraform-plain.svg?url";
 import SqlIcon from "devicon/icons/sqldeveloper/sqldeveloper-original.svg?url";
 import VueIcon from "devicon/icons/vuejs/vuejs-original.svg?url";
+import AWSCloudFormationIcon from "aws-icons/icons/architecture-service/AWSCloudFormation.svg?url";
 
 // import JavaScriptIcon from "devicon/icons/javascript/javascript-original.svg?url";
 // import PythonIcon from "devicon/icons/python/python-original.svg?url";
@@ -46,6 +48,8 @@ export enum SkillId {
   gcloudarmor = "gcloudarmor",
   aws = "aws",
   gcp = "gcp",
+  tf = "tf",
+  cfn = "cfn",
 }
 
 export const skillIconMap = Object.freeze({
@@ -70,4 +74,6 @@ export const skillIconMap = Object.freeze({
   [SkillId.gcloudarmor]: CloudCloudArmorIcon,
   [SkillId.aws]: AwsIcon,
   [SkillId.gcp]: GcpIcon,
+  [SkillId.tf]: TerraformIcon,
+  [SkillId.cfn]: AWSCloudFormationIcon,
 });
