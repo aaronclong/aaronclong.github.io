@@ -30,6 +30,11 @@
         "id": "java",
         "name": "Java",
         "type": "language"
+      },
+      {
+        "id": "hcl",
+        "name": "HCL",
+        "type": "language"
       }
     ],
     "frameworks": [
@@ -50,6 +55,24 @@
         "name": "Angular",
         "type": "framework",
         "language": "js"
+      },
+      {
+        "id": "apollo",
+        "name": "Apollo GraphQL",
+        "type": "framework",
+        "language": "js"
+      },
+      {
+        "id": "fastapi",
+        "name": "FastAPI",
+        "type": "framework",
+        "language": "py"
+      },
+      {
+        "id": "flask",
+        "name": "Flask",
+        "type": "framework",
+        "language": "py"
       }
     ],
     "libraries": [
@@ -89,9 +112,53 @@
       },
       {
         "id": "ecs",
+        "name": "AWS ECS",
         "type": "infra",
         "system": "faas",
         "cloudProvider": "aws"
+      },
+      {
+        "id": "gcf",
+        "name": "GCP Cloud Run Functions",
+        "type": "infra",
+        "system": "faas",
+        "cloudProvider": "gcp"
+      },
+      {
+        "id": "gcloudarmor",
+        "name": "GCP Cloud Armor",
+        "type": "infra",
+        "system": "waf",
+        "cloudProvider": "gcp"
+      },
+      {
+        "id": "tf",
+        "name": "Terraform",
+        "type": "infra",
+        "system": "iac",
+        "lang": "hcl"
+      },
+      {
+        "id": "cfn",
+        "name": "AWS CloudFormation",
+        "type": "infra",
+        "system": "iac",
+        "lang": "yaml|json",
+        "cloudProvider": "aws"
+      },
+      {
+        "id": "gha",
+        "name": "Github Actions",
+        "type": "infra",
+        "system": "ci",
+        "host": "gh"
+      },
+      {
+        "id": "gitlab",
+        "name": "Gitlab",
+        "type": "infra",
+        "system": "ci",
+        "host": "gitlab"
       }
     ],
     "cloudProviders": [
@@ -115,7 +182,19 @@
       "role": "Software Engineer",
       "startDate": "2023-04-01",
       "endDate": null,
-      "skills": ["py", "sql", "js", "react", "gcp"],
+      "skills": [
+        "py",
+        "sql",
+        "js",
+        "ts",
+        "react",
+        "tf",
+        "gcp",
+        "gcloudarmor",
+        "gcf",
+        "cloudrun",
+        "gha"
+      ],
       "keyResults": [
         "Designed and implemented web based barcode scanner for IKEA’s Gift Registry platform",
         "Enhanced GraphQL API for new business use cases and hardened security with WAF",
@@ -128,16 +207,17 @@
       "startDate": "2020-09-01",
       "endDate": "2023-04-01",
       "skills": [
+        "pd",
         "py",
         "sql",
-        "py",
         "vue",
         "js",
         "ts",
         "aws",
         "docker",
         "lambda",
-        "ecs"
+        "ecs",
+        "cfn"
       ],
       "keyResults": [
         "Develop and lead fund optimization strategies utilizing Python microservices saving investors millions of dollars",
@@ -152,17 +232,17 @@
       "startDate": "2020-01-01",
       "endDate": "2020-09-01",
       "skills": [
-        "py",
-        "pd",
         "c#",
         "sql",
         "js",
         "ts",
+        "tf",
         "ng",
         "aws",
         "k8s",
         "lambda",
-        "docker"
+        "docker",
+        "gitlab"
       ],
       "keyResults": [
         "Converted POC app to full CI/CD environment utilizing Kubernetes, AWS, and Docker",
@@ -176,7 +256,7 @@
       "role": "Software Developer",
       "startDate": "2017-08-01",
       "endDate": "2020-01-01",
-      "skills": ["c#", "sql", "js", "ts", "react"],
+      "skills": ["c#", "sql", "js", "ts", "react", "docker", "gitlab"],
       "keyResults": [
         "Enabled Option and Swap Pricing models via AspNet Core APIs and React front-ends",
         "Transitioned legacy DotNet 4 apps to DotNet Core/cross-platform DotNet",
