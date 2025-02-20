@@ -30,7 +30,7 @@ export interface Position {
   company: string;
   role: string;
   startDate: string;
-  endDate: string | null;
+  endDate?: string;
   skills: string[];
   keyResults: string[];
   location?: string;
