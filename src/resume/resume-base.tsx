@@ -1,23 +1,34 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
-import { Position } from "./types";
+import type { Resume as ResumeType } from "./types";
 import { PositionCard } from "./position";
 
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
-import { fetchResume } from "./data";
+import { createSkillById, fetchResume } from "./data";
+import { MultiTagSearch } from "./search";
 
 export function Resume() {
-  const [positions, setPositions] = useState<Position[]>([]);
+  const [rawData, setRawData] = useState<ResumeType>();
+
   useEffect(() => {
-    fetchResume().then((data) => setPositions(data.positions));
+    fetchResume().then(setRawData);
   }, []);
+
+  const skillsMap = useMemo(() => {
+    if (!rawData?.skills) {
+      return new Map();
+    }
+
+    return createSkillById(rawData.skills);
+  }, [rawData]);
 
   return (
     <Box sx={{ width: "100%" }}>
+      <MultiTagSearch skillMap={skillsMap} />
       <Stack spacing={2}>
-        {positions.map((position: any) => (
+        {rawData?.positions?.map((position: any) => (
           <PositionCard key={position.company} {...position} />
         ))}
       </Stack>
