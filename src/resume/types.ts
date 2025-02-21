@@ -36,12 +36,16 @@ export interface Position {
   location?: string;
 }
 
+export type Skills = {
+  languages: Language[];
+  frameworks: Framework[];
+  infra: Infra[];
+  cloudProviders: CloudProvider[];
+};
+
+export type SkillType = Language | Framework | Infra | CloudProvider;
+
 export interface Resume {
-  skills: {
-    languages: Language[];
-    frameworks: Framework[];
-    infra: Infra[];
-    cloudProviders: CloudProvider[];
-  };
+  skills: Skills;
   positions: Position[];
 }
