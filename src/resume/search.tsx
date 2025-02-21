@@ -4,7 +4,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import Chip from "@mui/material/Chip";
 import { UseAutocompleteProps } from "@mui/material";
 
-import type { SkillMap } from "./data";
+import type { SkillDictionary } from "./data";
 
 type HandleTagChange = UseAutocompleteProps<
   string,
@@ -13,21 +13,22 @@ type HandleTagChange = UseAutocompleteProps<
   false
 >["onChange"];
 
-export const MultiTagSearch: React.FC<{ skillMap: SkillMap }> = ({
-  skillMap,
+export type SkillSearchProps = {
+  skills: SkillDictionary;
+  onTagSelect?: (tags: string[]) => void;
+};
+
+export const SkillSearch: React.FC<SkillSearchProps> = ({
+  skills,
+  onTagSelect,
 }) => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const handleTagChange: HandleTagChange = (_event, newValue) => {
     setSelectedTags(newValue);
+    onTagSelect?.(newValue);
   };
 
-  const options = useMemo(() => {
-    const result = [];
-    for (const skill of skillMap.values()) {
-      result.push(skill.name);
-    }
-    return result;
-  }, [skillMap]);
+  const options = useMemo(() => skills.getSkillNames(), [skills]);
 
   return (
     <Autocomplete
