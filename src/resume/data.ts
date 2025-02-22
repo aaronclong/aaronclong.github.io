@@ -24,18 +24,30 @@ export class SkillDictionary {
     private readonly idByName: Map<string, string>
   ) {}
 
-  public getSkillNames(): string[] {
+  public getSkillNames = (): string[] => {
     return Array.from(this.idByName.keys());
+  };
+
+  public getSkillsByName = (skillNames: string[]): SkillType[] => {
+    return (
+      skillNames
+        ?.map(this.getSkillByName)
+        .filter(SkillDictionary.isSkillType) ?? []
+    );
+  };
+
+  private static isSkillType(value: SkillType | undefined): value is SkillType {
+    return value !== undefined;
   }
 
-  public getSkillByName(skillName: string): SkillType | undefined {
+  public getSkillByName = (skillName: string): SkillType | undefined => {
     const id = this.idByName.get(skillName);
     return id ? this.skillMap.get(id) : undefined;
-  }
+  };
 
-  public getSkillById(skillId: string): SkillType | undefined {
+  public getSkillById = (skillId: string): SkillType | undefined => {
     return this.skillMap.get(skillId);
-  }
+  };
 
   public static create(skills: Skills): SkillDictionary {
     const valuesById: [string, SkillType][] = [];
