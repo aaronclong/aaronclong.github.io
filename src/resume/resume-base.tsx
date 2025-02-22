@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 
 import type { Resume as ResumeType } from "./types";
 import { PositionCard } from "./position";
@@ -11,6 +11,7 @@ import { SkillSearch } from "./search";
 
 export function Resume() {
   const [rawData, setRawData] = useState<ResumeType>();
+  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
 
   useEffect(() => {
     fetchResume().then(setRawData);
@@ -24,11 +25,31 @@ export function Resume() {
     return SkillDictionary.create(rawData.skills);
   }, [rawData]);
 
+  const filterPositions = useCallback(
+    (skills: string[]) => {
+      if (!rawData?.positions || skills.length === 0) {
+        return rawData?.positions ?? [];
+      }
+
+      // There is probably a more performance friendly way to do this
+      const skillIds = skillsMap
+        .getSkillsByName(skills)
+        .map((skill) => skill.id);
+
+      return rawData.positions.filter((position) =>
+        position.skills.some((skill) => skillIds.includes(skill))
+      );
+    },
+    [skillsMap, selectedSkills, rawData?.positions]
+  );
+
+  const filteredPositions = filterPositions(selectedSkills);
+
   return (
     <Box sx={{ width: "100%" }}>
-      <SkillSearch skills={skillsMap} onTagSelect={console.log} />
+      <SkillSearch skills={skillsMap} onTagSelect={setSelectedSkills} />
       <Stack spacing={2}>
-        {rawData?.positions?.map((position: any) => (
+        {filteredPositions.map((position) => (
           <PositionCard key={position.company} {...position} />
         ))}
       </Stack>
