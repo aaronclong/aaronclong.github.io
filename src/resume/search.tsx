@@ -1,10 +1,17 @@
-import { useState, useMemo } from "react";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
-import Chip from "@mui/material/Chip";
-import { UseAutocompleteProps } from "@mui/material";
+import React, { useState, useMemo } from "react";
+import {
+  Chip,
+  ChipTypeMap,
+  Autocomplete,
+  TextField,
+  UseAutocompleteProps,
+} from "@mui/material";
 
 import type { SkillDictionary } from "./data";
+
+const SkillChip: React.FC<ChipTypeMap["props"]> = (props) => {
+  return <Chip color="primary" {...props} />;
+};
 
 type HandleTagChange = UseAutocompleteProps<
   string,
@@ -33,15 +40,16 @@ export const SkillSearch: React.FC<SkillSearchProps> = ({
   return (
     <Autocomplete
       multiple
-      freeSolo
+      // freeSolo
       options={options}
       value={selectedTags}
       onChange={handleTagChange}
-      renderTags={(value, getTagProps) =>
-        value.map((option, index) => (
-          <Chip label={option} {...getTagProps({ index })} key={option} />
-        ))
-      }
+      renderTags={(value, getTagProps) => {
+        return value.map((option, index) => {
+          const props = getTagProps({ index });
+          return <SkillChip label={option} {...props} key={option} />;
+        });
+      }}
       renderInput={(params) => (
         <TextField {...params} variant="outlined" label="Search Tags" />
       )}
