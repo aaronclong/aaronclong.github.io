@@ -1,4 +1,7 @@
-import type { PostHogConfig } from "posthog-js";
+import { PostHogConfig, posthog, PostHog } from "posthog-js";
+
+export type Client = PostHog;
+export const client = posthog;
 
 type AnalyticsConfig = Partial<PostHogConfig> & {
   public_key: string;
@@ -13,5 +16,11 @@ export function getAnalyticsConfig(): AnalyticsConfig {
     public_key,
     api_host,
     person_profiles: "always",
+    autocapture: false,
   };
+}
+
+export function initAnalytics() {
+  const { public_key, ...options } = getAnalyticsConfig();
+  posthog.init(public_key, options);
 }

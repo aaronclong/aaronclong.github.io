@@ -1,17 +1,22 @@
-import { StrictMode } from "react";
+import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { PostHogProvider } from "posthog-js/react";
 
 import "./index.css";
 import { App } from "./App.tsx";
-import { getAnalyticsConfig } from "./analytics";
+import { initAnalytics, client } from "./analytics";
 
-const { public_key, ...options } = getAnalyticsConfig();
+function AppRoot() {
+  useEffect(initAnalytics, []);
+
+  return (
+    <StrictMode>
+      <PostHogProvider client={client}>
+        <App />
+      </PostHogProvider>
+    </StrictMode>
+  );
+}
+
 const root = createRoot(document.getElementById("root")!);
-root.render(
-  <StrictMode>
-    <PostHogProvider apiKey={public_key} options={options}>
-      <App />
-    </PostHogProvider>
-  </StrictMode>
-);
+root.render(<AppRoot />);
