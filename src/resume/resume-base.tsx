@@ -3,8 +3,7 @@ import { useEffect, useState, useMemo, useCallback } from "react";
 import type { Resume as ResumeType } from "./types";
 import { PositionCard } from "./position";
 
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
+import { Box, Stack } from "@mui/material";
 
 import { SkillDictionary, fetchResume } from "./data";
 import { SkillSearch } from "./search";
