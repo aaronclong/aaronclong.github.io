@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 
 import type { SkillDictionary } from "./data";
+import { getLocale } from "../locale";
 
 const SkillChip: React.FC<ChipTypeMap["props"]> = (props) => {
   return <Chip color="primary" {...props} />;
@@ -51,7 +52,11 @@ export const SkillSearch: React.FC<SkillSearchProps> = ({
         });
       }}
       renderInput={(params) => (
-        <TextField {...params} variant="outlined" label="Search Tags" />
+        <TextField
+          {...params}
+          variant="outlined"
+          label={getLocale("resume.skillSearch")}
+        />
       )}
       fullWidth
     />
