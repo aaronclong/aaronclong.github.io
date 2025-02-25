@@ -11,7 +11,7 @@ import {
 import { client, getConsentStorage } from "./core";
 import { getLocale } from "../locale";
 
-export const ConsentModal = () => {
+export function ConsentModal() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -53,4 +53,4 @@ export const ConsentModal = () => {
       </DialogActions>
     </Dialog>
   );
-};
+}
