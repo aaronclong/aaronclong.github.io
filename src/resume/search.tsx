@@ -24,18 +24,13 @@ type HandleTagChange = UseAutocompleteProps<
 
 export type SkillSearchProps = {
   skills: SkillDictionary;
-  onTagSelect?: (tags: string[]) => void;
 };
 
-export const SkillSearch: React.FC<SkillSearchProps> = ({
-  skills,
-  onTagSelect,
-}) => {
+export const SkillSearch: React.FC<SkillSearchProps> = ({ skills }) => {
   const { setSkillTags, skillTags } = useSearchContext();
 
   const handleTagChange: HandleTagChange = (_event, newValue) => {
     setSkillTags(newValue);
-    onTagSelect?.(newValue);
   };
 
   const options = useMemo(() => skills.getSkillNames(), [skills]);

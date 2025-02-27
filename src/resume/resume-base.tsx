@@ -50,7 +50,7 @@ export function ResumeBase() {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <SkillSearch skills={skillsMap} onTagSelect={console.log} />
+      <SkillSearch skills={skillsMap} />
       <Stack spacing={2}>
         {filteredPositions.map((position) => (
           <PositionCard
