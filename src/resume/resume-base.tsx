@@ -7,11 +7,11 @@ import { Box, Stack } from "@mui/material";
 
 import { SkillDictionary, fetchResume } from "./data";
 import { SkillSearch } from "./search";
-import { SearchProvider } from "./search-context";
+import { useSearchContext } from "./search-context";
 
-export function Resume() {
+export function ResumeBase() {
   const [rawData, setRawData] = useState<ResumeType>();
-  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
+  const { skillTags } = useSearchContext();
 
   useEffect(() => {
     fetchResume().then(setRawData);
@@ -40,21 +40,26 @@ export function Resume() {
         position.skills.some((skill) => skillIds.includes(skill))
       );
     },
-    [skillsMap, selectedSkills, rawData?.positions]
+    [skillsMap, rawData?.positions]
   );
 
-  const filteredPositions = filterPositions(selectedSkills);
+  const filteredPositions = filterPositions(skillTags);
+
+  const getSkillName = (skillId: string) =>
+    skillsMap.getSkillById(skillId)?.name;
 
   return (
-    <SearchProvider>
-      <Box sx={{ width: "100%" }}>
-        <SkillSearch skills={skillsMap} onTagSelect={setSelectedSkills} />
-        <Stack spacing={2}>
-          {filteredPositions.map((position) => (
-            <PositionCard key={position.company} {...position} />
-          ))}
-        </Stack>
-      </Box>
-    </SearchProvider>
+    <Box sx={{ width: "100%" }}>
+      <SkillSearch skills={skillsMap} onTagSelect={console.log} />
+      <Stack spacing={2}>
+        {filteredPositions.map((position) => (
+          <PositionCard
+            key={position.company}
+            {...position}
+            getSkillName={getSkillName}
+          />
+        ))}
+      </Stack>
+    </Box>
   );
 }

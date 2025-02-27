@@ -91,7 +91,9 @@ export function KeyResultList({ keyResults }: { keyResults: string[] }) {
   );
 }
 
-type PositionProps = Position;
+type PositionProps = Position & {
+  getSkillName: (skillId: string) => string | undefined;
+};
 
 // https://mui.com/material-ui/customization/typography/#adding-amp-disabling-variants
 export function PositionCard({
@@ -101,6 +103,7 @@ export function PositionCard({
   startDate,
   endDate,
   skills,
+  getSkillName,
 }: PositionProps) {
   return (
     <Box sx={{ minWidth: 275 }}>
@@ -130,7 +133,17 @@ export function PositionCard({
           <Divider />
           <Box component="section" sx={{ p: 2 }}>
             {skills.map((skill) => {
-              return <SkillBadge key={skill} skill={skill as SkillId} />;
+              const name = getSkillName(skill);
+              if (!name) {
+                return null;
+              }
+              return (
+                <SkillBadge
+                  key={skill}
+                  skill={skill as SkillId}
+                  skillName={name}
+                />
+              );
             })}
           </Box>
           <KeyResultList keyResults={keyResults} />
