@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useCallback } from "react";
 
 type SearchContextType = {
   skillTags: string[];
-  addSkillTag: (tags: string) => void;
+  addSkillTag: (tag: string) => void;
   setSkillTags: (tags: string[]) => void;
 };
 
