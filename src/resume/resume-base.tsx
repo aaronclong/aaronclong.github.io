@@ -7,6 +7,7 @@ import { Box, Stack } from "@mui/material";
 
 import { SkillDictionary, fetchResume } from "./data";
 import { SkillSearch } from "./search";
+import { SearchProvider } from "./search-context";
 
 export function Resume() {
   const [rawData, setRawData] = useState<ResumeType>();
@@ -45,13 +46,15 @@ export function Resume() {
   const filteredPositions = filterPositions(selectedSkills);
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <SkillSearch skills={skillsMap} onTagSelect={setSelectedSkills} />
-      <Stack spacing={2}>
-        {filteredPositions.map((position) => (
-          <PositionCard key={position.company} {...position} />
-        ))}
-      </Stack>
-    </Box>
+    <SearchProvider>
+      <Box sx={{ width: "100%" }}>
+        <SkillSearch skills={skillsMap} onTagSelect={setSelectedSkills} />
+        <Stack spacing={2}>
+          {filteredPositions.map((position) => (
+            <PositionCard key={position.company} {...position} />
+          ))}
+        </Stack>
+      </Box>
+    </SearchProvider>
   );
 }

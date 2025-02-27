@@ -9,6 +9,7 @@ import {
 
 import type { SkillDictionary } from "./data";
 import { getLocale } from "../locale";
+import { useSearchContext } from "./search-context";
 
 const SkillChip: React.FC<ChipTypeMap["props"]> = (props) => {
   return <Chip color="primary" {...props} />;
@@ -30,9 +31,10 @@ export const SkillSearch: React.FC<SkillSearchProps> = ({
   skills,
   onTagSelect,
 }) => {
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const { setSkillTags, skillTags } = useSearchContext();
+
   const handleTagChange: HandleTagChange = (_event, newValue) => {
-    setSelectedTags(newValue);
+    setSkillTags(newValue);
     onTagSelect?.(newValue);
   };
 
@@ -43,7 +45,7 @@ export const SkillSearch: React.FC<SkillSearchProps> = ({
       multiple
       // freeSolo
       options={options}
-      value={selectedTags}
+      value={skillTags}
       onChange={handleTagChange}
       renderTags={(value, getTagProps) => {
         return value.map((option, index) => {
