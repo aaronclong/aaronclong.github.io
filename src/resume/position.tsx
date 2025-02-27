@@ -16,6 +16,7 @@ import { parse, format } from "date-fns";
 import { Position } from "./types";
 import { SkillBadge } from "./skills-badges";
 import { SkillId } from "../skill-icon-map";
+import { getLocale } from "../locale";
 
 /**
  * Probably overkill but provides flexibility if I want to change the format later
@@ -41,7 +42,10 @@ const DateChip = ({
   color?: ChipOwnProps["color"];
   current?: boolean;
 }) => {
-  const formatted = current ? "Present" : formatDate(date);
+  const formatted = current
+    ? getLocale("resume.currentRoleEndDate")
+    : formatDate(date);
+
   // TODO: Make identifier by theme
   // https://mui.com/material-ui/customization/creating-themed-components/
   return (

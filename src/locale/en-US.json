@@ -6,6 +6,7 @@
     "consentDecline": "Decline"
   },
   "resume": {
-    "skillSearch": "Search Skills"
+    "skillSearch": "Search Skills",
+    "currentRoleEndDate": "Present"
   }
 }
