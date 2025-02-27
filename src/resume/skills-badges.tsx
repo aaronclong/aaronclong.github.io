@@ -30,7 +30,7 @@ export function SkillBadge({
       onClick={() => addSkillTag(skillName)}
       disableFocusRipple
     >
-      <img src={icon} width="24" height="24" />
+      <img src={icon} width="24" height="24" alt={skillName} />
     </SkillFab>
   );
 }
