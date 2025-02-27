@@ -9,12 +9,15 @@ import { SkillDictionary, fetchResume } from "./data";
 import { SkillSearch } from "./search";
 import { useSearchContext } from "./search-context";
 
+import { client } from "../analytics";
+
 export function ResumeBase() {
   const [rawData, setRawData] = useState<ResumeType>();
   const { skillTags } = useSearchContext();
 
   useEffect(() => {
     fetchResume().then(setRawData);
+    client.capture("resume_view");
   }, []);
 
   const skillsMap = useMemo(() => {

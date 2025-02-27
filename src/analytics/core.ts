@@ -17,9 +17,9 @@ export function getAnalyticsConfig(): AnalyticsConfig {
     api_host,
     person_profiles: "always",
     autocapture: false,
-    loaded: (posthog) => {
-      posthog.opt_out_capturing(); // Disable tracking by default
-    },
+    // loaded: (posthog) => {
+    //   posthog.opt_out_capturing(); // Disable tracking by default
+    // },
   };
 }
 
@@ -34,7 +34,7 @@ class ConsentStorage {
 
   public get = (): boolean | undefined => {
     const value = this.storage.getItem(ConsentStorage.Key);
-    return value ? ConsentStorage.convertToBoolean(value) : false;
+    return value ? ConsentStorage.convertToBoolean(value) : undefined;
   };
 
   public set = (value: boolean): void => {

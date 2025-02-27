@@ -16,7 +16,7 @@ export function ConsentModal() {
 
   useEffect(() => {
     const consent = getConsentStorage().get();
-    if (!consent) {
+    if (consent === undefined) {
       setOpen(true);
     }
 

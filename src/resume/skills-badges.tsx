@@ -2,6 +2,8 @@ import { Fab, styled } from "@mui/material";
 import { SkillId, skillIconMap } from "../skill-icon-map";
 import { useSearchContext } from "./search-context";
 
+import { client } from "../analytics";
+
 const SkillFab = styled(Fab)({
   backgroundColor: "#f5f5f5", // Light grey
   border: "1px solid black", // Thin black border
@@ -27,7 +29,10 @@ export function SkillBadge({
     <SkillFab
       variant="extended"
       size="small"
-      onClick={() => addSkillTag(skillName)}
+      onClick={() => {
+        addSkillTag(skillName);
+        client.capture("skill_badge_click", { skill });
+      }}
       disableFocusRipple
     >
       <img src={icon} width="24" height="24" alt={skillName} />
