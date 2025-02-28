@@ -3,18 +3,21 @@ import { useEffect, useState, useMemo, useCallback } from "react";
 import type { Resume as ResumeType } from "./types";
 import { PositionCard } from "./position";
 
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
+import { Box, Stack } from "@mui/material";
 
 import { SkillDictionary, fetchResume } from "./data";
 import { SkillSearch } from "./search";
+import { useSearchContext } from "./search-context";
 
-export function Resume() {
+import { client } from "../analytics";
+
+export function ResumeBase() {
   const [rawData, setRawData] = useState<ResumeType>();
-  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
+  const { skillTags } = useSearchContext();
 
   useEffect(() => {
     fetchResume().then(setRawData);
+    client.capture("resume_view");
   }, []);
 
   const skillsMap = useMemo(() => {
@@ -40,17 +43,24 @@ export function Resume() {
         position.skills.some((skill) => skillIds.includes(skill))
       );
     },
-    [skillsMap, selectedSkills, rawData?.positions]
+    [skillsMap, rawData?.positions]
   );
 
-  const filteredPositions = filterPositions(selectedSkills);
+  const filteredPositions = filterPositions(skillTags);
+
+  const getSkillName = (skillId: string) =>
+    skillsMap.getSkillById(skillId)?.name;
 
   return (
     <Box sx={{ width: "100%" }}>
-      <SkillSearch skills={skillsMap} onTagSelect={setSelectedSkills} />
+      <SkillSearch skills={skillsMap} />
       <Stack spacing={2}>
         {filteredPositions.map((position) => (
-          <PositionCard key={position.company} {...position} />
+          <PositionCard
+            key={position.company}
+            {...position}
+            getSkillName={getSkillName}
+          />
         ))}
       </Stack>
     </Box>

@@ -1,0 +1,12 @@
+{
+  "analytics": {
+    "consentHeader": "Want a Cookie?",
+    "consentDescription": "We use cookies to improve your experience. Do you accept tracking?",
+    "consentAccept": "Accept",
+    "consentDecline": "Decline"
+  },
+  "resume": {
+    "skillSearch": "Search Skills",
+    "currentRoleEndDate": "Present"
+  }
+}

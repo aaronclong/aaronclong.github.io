@@ -1,5 +1,8 @@
 import { Fab, styled } from "@mui/material";
 import { SkillId, skillIconMap } from "../skill-icon-map";
+import { useSearchContext } from "./search-context";
+
+import { client } from "../analytics";
 
 const SkillFab = styled(Fab)({
   backgroundColor: "#f5f5f5", // Light grey
@@ -12,11 +15,27 @@ const SkillFab = styled(Fab)({
 
 // https://mui.com/material-ui/react-floating-action-button/
 
-export function SkillBadge({ skill }: { skill: SkillId }) {
+export function SkillBadge({
+  skill,
+  skillName,
+}: {
+  skill: SkillId;
+  skillName: string;
+}) {
+  const { addSkillTag } = useSearchContext();
   const icon = skillIconMap[skill];
+
   return (
-    <SkillFab variant="extended" size="small" disableFocusRipple>
-      <img src={icon} width="24" height="24" />
+    <SkillFab
+      variant="extended"
+      size="small"
+      onClick={() => {
+        addSkillTag(skillName);
+        client.capture("skill_badge_click", { skill });
+      }}
+      disableFocusRipple
+    >
+      <img src={icon} width="24" height="24" alt={skillName} />
     </SkillFab>
   );
 }

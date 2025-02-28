@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- the 'unsafe-inline' is bad but it is only for styles -->
+    <!-- If this was rendered from a server, it would be a nonce -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self'; 
+        script-src 'self' https://*.posthog.com; 
+        connect-src 'self' https://*.posthog.com;
+        img-src 'self' https://*.posthog.com; 
+        style-src 'self' https://*.posthog.com 'unsafe-inline'; 
+        font-src https://*.posthog.com;
+        media-src https://*.posthog.com;
+      "
+    />
     <title>Aaron Long</title>
   </head>
   <body>

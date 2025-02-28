@@ -16,6 +16,7 @@ import { parse, format } from "date-fns";
 import { Position } from "./types";
 import { SkillBadge } from "./skills-badges";
 import { SkillId } from "../skill-icon-map";
+import { getLocale } from "../locale";
 
 /**
  * Probably overkill but provides flexibility if I want to change the format later
@@ -41,7 +42,10 @@ const DateChip = ({
   color?: ChipOwnProps["color"];
   current?: boolean;
 }) => {
-  const formatted = current ? "Present" : formatDate(date);
+  const formatted = current
+    ? getLocale("resume.currentRoleEndDate")
+    : formatDate(date);
+
   // TODO: Make identifier by theme
   // https://mui.com/material-ui/customization/creating-themed-components/
   return (
@@ -87,7 +91,9 @@ export function KeyResultList({ keyResults }: { keyResults: string[] }) {
   );
 }
 
-type PositionProps = Position;
+type PositionProps = Position & {
+  getSkillName: (skillId: string) => string | undefined;
+};
 
 // https://mui.com/material-ui/customization/typography/#adding-amp-disabling-variants
 export function PositionCard({
@@ -97,6 +103,7 @@ export function PositionCard({
   startDate,
   endDate,
   skills,
+  getSkillName,
 }: PositionProps) {
   return (
     <Box sx={{ minWidth: 275 }}>
@@ -126,7 +133,17 @@ export function PositionCard({
           <Divider />
           <Box component="section" sx={{ p: 2 }}>
             {skills.map((skill) => {
-              return <SkillBadge key={skill} skill={skill as SkillId} />;
+              const name = getSkillName(skill);
+              if (!name) {
+                return null;
+              }
+              return (
+                <SkillBadge
+                  key={skill}
+                  skill={skill as SkillId}
+                  skillName={name}
+                />
+              );
             })}
           </Box>
           <KeyResultList keyResults={keyResults} />
